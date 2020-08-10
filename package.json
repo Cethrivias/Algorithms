@@ -1,0 +1,19 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha '**/*.test.js' --exit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^8.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.54",
+    "chai": "^4.2.0"
+  }
+}
