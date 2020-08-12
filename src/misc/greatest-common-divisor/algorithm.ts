@@ -1,5 +1,5 @@
-class GreatestCommondDivisor {
-  static loop(a, b) {
+export class GreatestCommonDivisor {
+  static loop(a: number, b: number) {
     while (b) {
       const remainder = a % b;
       a = b;
@@ -9,7 +9,7 @@ class GreatestCommondDivisor {
     return a;
   }
 
-  static recursion(a, b) {
+  static recursion(a: number, b: number): number {
     if (!b) {
       return a;
     }
@@ -18,5 +18,3 @@ class GreatestCommondDivisor {
     return this.recursion(b, remainder);
   }
 }
-
-module.exports = GreatestCommondDivisor;

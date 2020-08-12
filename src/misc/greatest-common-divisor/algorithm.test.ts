@@ -1,5 +1,5 @@
-const GreatestCommonDivisior = require('./algorithm');
-const { expect } = require('chai');
+import { expect } from 'chai';
+import { GreatestCommonDivisor } from './algorithm';
 
 describe('GreatestCommonDivisior', function () {
   const tests = [
@@ -10,18 +10,18 @@ describe('GreatestCommonDivisior', function () {
   ];
 
   describe('loop', function () {
-    tests.forEach((test) => {
+    tests.forEach(test => {
       it(`GCD(${test.a}, ${test.b}) => ${test.result}`, function () {
-        const result = GreatestCommonDivisior.loop(test.a, test.b);
+        const result = GreatestCommonDivisor.loop(test.a, test.b);
         expect(result).to.equal(test.result);
       });
     });
   });
 
   describe('recursion', function () {
-    tests.forEach((test) => {
+    tests.forEach(test => {
       it(`GCD(${test.a}, ${test.b}) => ${test.result}`, function () {
-        const result = GreatestCommonDivisior.recursion(test.a, test.b);
+        const result = GreatestCommonDivisor.recursion(test.a, test.b);
         expect(result).to.equal(test.result);
       });
     });
