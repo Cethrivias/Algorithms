@@ -1,10 +1,11 @@
 import { expect } from 'chai';
 import { PrimeFactors } from './algorithm';
 
-describe.only('PrimeFactors', function () {
+describe('PrimeFactors', function () {
   const tests = [
     { number: 127, factors: [127] },
     { number: 76, factors: [2, 2, 19] },
+    { number: 73, factors: [73] },
     { number: 15, factors: [3, 5] },
   ];
 
@@ -18,7 +19,7 @@ describe.only('PrimeFactors', function () {
     });
   });
 
-  describe('findOptimised', function() {
+  describe('findOptimised', function () {
     tests.forEach(test => {
       it(`${test.number} => ${test.factors}`, function () {
         const result = PrimeFactors.findOptimised(test.number);

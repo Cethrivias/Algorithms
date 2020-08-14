@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { PrimeNumbers } from './algorithm';
 
-describe.only('PrimeNumbers', function () {
+describe('PrimeNumbers', function () {
   const tests = [
     { number: 0, result: [] },
     { number: 5, result: [2, 3, 5] },
