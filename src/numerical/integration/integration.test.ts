@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { NumericalIntegration } from './integration';
 
-describe.only('NumbericalIntegration', function () {
+describe('NumbericalIntegration', function () {
   describe('rectangleRule', function () {
     it('y = 1 + x + Sin(2 * x), from 0 to 5, 1000 rectangles => ~18.4', function () {
       const func = (x: number) => 1 + x + Math.sin(2 * x);
