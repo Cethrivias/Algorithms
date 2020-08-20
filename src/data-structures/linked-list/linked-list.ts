@@ -1,8 +1,33 @@
+// tslint:disable:max-classes-per-file
+// tslint:disable:variable-name
+
+class Element<T> {
+  constructor(public value: T, public next: Element<T> | null = null) {}
+}
+
 export class LinkedList<T> {
+  public static Element = Element;
+
   public size = 0;
 
-  private root: Element<T> | null = null;
-  private top: Element<T> | null = null;
+  protected root: Element<T> | null = null;
+  protected top: Element<T> | null = null;
+
+  public [Symbol.iterator]() {
+    let element = this.root;
+    return {
+      next() {
+        if (element === null) {
+          return { done: true };
+        }
+
+        const value = element.value;
+        element = element.next;
+
+        return { done: false, value };
+      },
+    };
+  }
 
   public clear() {
     this.root = null;
@@ -14,7 +39,7 @@ export class LinkedList<T> {
     const list = new LinkedList<T>();
     let element = this.root;
 
-    while(element) {
+    while (element) {
       list.push(element.value);
       element = element.next;
     }
@@ -112,9 +137,4 @@ export class LinkedList<T> {
       }
     }
   }
-}
-
-// tslint:disable-next-line:max-classes-per-file
-class Element<T> {
-  constructor(public value: T, public next: Element<T> | null = null) {}
 }

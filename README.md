@@ -1,5 +1,10 @@
 # Algorithms Cheat Sheet
 
+# Purpose
+I created this project to teach myself algorithms. At the moment there are only a couple of basic ones. Hopefuly by the time somebody reads this there will be many more.
+
+If you see any mistakes or have suggestions please feel free to open an issue or contact me directly via email if it's visible atm.
+
 ## Complexity
 ### Big O Notation
 **Big O notation** uses a function to describe the algorithm’s **worst-case performance** scaling related to collection size. (The program’s asymptotic performance)

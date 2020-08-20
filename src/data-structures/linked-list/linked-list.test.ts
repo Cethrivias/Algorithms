@@ -14,18 +14,18 @@ describe('LinkedList', function () {
     });
   });
 
-  describe('copy', function() {
-    it('Creates a shallow copy of a list', function() {
-      const list = new LinkedList()
-      list.push('test1')
-      list.push('test2')
-      list.push('test3')
+  describe('copy', function () {
+    it('Creates a shallow copy of a list', function () {
+      const list = new LinkedList();
+      list.push('test1');
+      list.push('test2');
+      list.push('test3');
       const listCopy = list.copy();
 
       expect(list.toString()).to.equal(listCopy.toString());
       expect(list).to.not.equal(listCopy);
-    })
-  })
+    });
+  });
 
   describe('push', function () {
     it('Adds new element to an empty list', function () {
@@ -124,6 +124,23 @@ describe('LinkedList', function () {
     });
   });
 
+  describe('iterator', function () {
+    it('Iterates over every record', function () {
+      const list = new LinkedList();
+      list.push('test1');
+      list.push('test2');
+      list.push('test3');
+
+      const testList = new LinkedList();
+
+      for (const value of list) {
+        testList.push(value);
+      }
+
+      expect(testList.toString()).to.equal(list.toString());
+    });
+  });
+
   describe('remove', function () {
     it('Removes element at position', function () {
       const list = new LinkedList();
@@ -194,8 +211,8 @@ describe('LinkedList', function () {
     });
   });
 
-  describe('unshift', function() {
-    it('Adds element to the beginning of a list', function() {
+  describe('unshift', function () {
+    it('Adds element to the beginning of a list', function () {
       const list = new LinkedList();
       list.unshift('test1');
       list.unshift('test2');
@@ -203,6 +220,6 @@ describe('LinkedList', function () {
 
       expect(list.size).to.equal(3);
       expect(list.toString()).to.equal('test3,test2,test1');
-    })
-  })
+    });
+  });
 });
