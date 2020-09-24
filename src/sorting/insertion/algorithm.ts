@@ -26,3 +26,21 @@ export class SortedList<T> extends LinkedList<T> {
     }
   }
 }
+
+export function sortInPlace<T>(array: T[]): T[] {
+  for (let i = 0; i < array.length; i++) {
+    // We need to store it in a separate variable
+    // because array[i] will be overwritten when we shift array's values to the right to make space for 'a'
+    const a = array[i];
+    for (let j = 0; j <= i; j++) {
+      if (a < array[j]) { // Found a new home for 'a'
+        for (let k = i; k > j; k--) { // moving rest of the array to the right to make space for 'a'
+          array[k] = array[k-1]
+        }
+        array[j] = a // assigning 'a' to it's new place
+        break;
+      }
+    }
+  }
+  return array;
+}

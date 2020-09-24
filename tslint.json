@@ -16,7 +16,7 @@
       "check-format",
       "allow-leading-underscore"
     ],
-    "no-console": true,
+    "no-console": false,
     "trailing-comma": true,
     "only-arrow-functions": false,
     "prefer-const": [

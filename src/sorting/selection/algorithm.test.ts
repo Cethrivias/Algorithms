@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { SelectionSort } from './algorithm';
 
-describe.only('SelectionSort', function () {
+describe('SelectionSort', function () {
   describe('sort', function () {
     it('Sorts', function () {
       const a = [5, 6, 2, 1, 35, 7, 8, 4, 23, 4, 3];

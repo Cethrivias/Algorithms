@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { SortedList } from './algorithm';
+import { SortedList, sortInPlace } from './algorithm';
 
 describe('InsertionSort', function () {
   describe('insert', function () {
@@ -20,6 +20,14 @@ describe('InsertionSort', function () {
       list.insert(3);
 
       expect(list.toString()).to.equal('1,2,3,4');
+    });
+  });
+
+  describe('insertInPlace', function () {
+    it('5,4,3,2,1 => 1,2,3,4,5', function () {
+      const array = [5, 4, 3, 2, 1];
+      sortInPlace(array);
+      expect(array).to.deep.equal([1,2,3,4,5])
     });
   });
 });
