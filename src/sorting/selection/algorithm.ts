@@ -24,4 +24,23 @@ export class SelectionSort {
 
     return result;
   }
+
+  public static sortInPlace<T>(list: T[]): T[] {
+    // for each position
+    for (let i = 0; i < list.length - 1; i++) {
+      // finding the smallest value after that position
+      let a = list[i]
+      let position = i
+      for (let j = i; j < list.length; j++) {
+        if (a === null || a > list[j]) {
+          a = list[j];
+          position = j
+        }
+      }
+      // swapping element at current position with the smallest found element
+      list[position] = list[i]
+      list[i] = a;
+    }
+    return list;
+  }
 }
